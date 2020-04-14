@@ -5,13 +5,16 @@ FLIR, FujiFilm, GE, GoPro, HP, JVC/Victor, Kodak, Leaf, Minolta/Konica-Minolta, 
 Pentax/Asahi, Phase One, Reconyx, Ricoh, Samsung, Sanyo, Sigma/Foveon and Sony.
 
 ### check metadata of images in current folder 
+```
 exiftools -k .
+```
 
 ### Change metdata date and shift one year forward 
-
+```
 exiftool "-AllDates+=1:0:0 00:00:00"  -overwrite_original "D:\DCIM\100DROIM"
-
+```
 
 ### Change the "modifyDate"  field in metadata based on previous changes in 'Createddate' field: 
-
+```
 ExifTool "-FileModifyDate<XMP:DateTimeOriginal" "-FileModifyDate<EXIF:CreateDate" "-FileModifyDate<XMP:CreateDate" "-FileModifyDate<$IPTC:DateCreated $IPTC:TimeCreated" "-FileModifyDate<EXIF:DateTimeOriginal" DIR
+```
